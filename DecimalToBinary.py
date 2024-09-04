@@ -1,11 +1,11 @@
 
 
 def DecToBin(value, startBit=32, endBits = 32):
-    # Split the value into integer and fractional parts
+    # Split into integer and fraction
     integer_part = int(value)
     fraction_part = value - integer_part
 
-    # Convert the integer part to binary
+    # Convert before the Dot
     bitString = ""
     if integer_part == 0:
         bitString = "0"
@@ -20,9 +20,9 @@ def DecToBin(value, startBit=32, endBits = 32):
     # Add decimal point before converting fractional part
     bitString += "."
 
-    # Convert the fractional part to binary
+    # Convert After the Dot
     power_of_two = 0.5
-    num_bits = endBits  # You can adjust the precision of the fractional part here
+    num_bits = endBits
     while num_bits > 0 and fraction_part > 0:
         if fraction_part >= power_of_two:
             bitString += '1'
